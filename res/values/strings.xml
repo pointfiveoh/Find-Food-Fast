@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<resources>
+    <string name="app_name">I Want Food</string>
+    <string name="iwantfoodButton">I Want Food</string>
+    <string name="jkButton">JK, not hungry</string>
+    <string name="first">First</string>
+    <string name="last">Last</string>
+    <string name="EnergyLazyCriterion">Lazy. I don\'t wanna leave my house.</string>
+    <string name="EnergyRelaxedCriterion">Relaxed, but I\'ll travel a short distance.</string>
+    <string name="EnergyEnergeticCriterion">Energetic. Reasonable travel is not a problem.</string>
+    <string name="EnergyOnePercentCriterion">Rich, bored, and fucking stupid. My private jet is fueling as we speak. Anything within 500 miles is too close.</string>
+    <string-array name="EnergyCriteria">
+        <item>Lazy. I don\'t wanna leave my house.</item>
+        <item>Relaxed, but I\'ll travel a short distance.</item>
+        <item>Energetic. Travel is not a problem.</item>
+    </string-array>
+    <string-array name="CostCriteria">
+        <item>A tight budget, but I gotta eat ($)</item>
+        <item>A little extra dough ($$)</item>
+        <item>A hot date tonight ($$$)</item>
+    </string-array>
+    <string-array name="HungerCriteria">
+        <item>Hungry. Normal levels of hungry-ness</item>
+        <item>Ravenous. Pre-Thanksgiving weekend levels of hunger</item>
+        <item>Christian Bale in The Machinist</item>
+    </string-array>
+    <string name="cost">Cost</string>
+    <string name="hunger">Hunger</string>
+    <string name="energy">Energy</string>
+    <string name="menu_settings">Menu Settings</string>
+    <string name="cancel">Cancel</string>
+    <string name="settingsOK">Go to Settings</string>
+    <string name="locationDialogMessage">Location services off. Turn on?</string>
+    <string name="findFood">Find Me Food!</string>
+    <string name="restart">Do-Over</string>
+</resources>
