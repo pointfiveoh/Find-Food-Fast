@@ -16,7 +16,7 @@
             	  android:name="CriteriaFragmentActivity"
             	  android:theme="@android:style/Theme.NoTitleBar" 
             	  />
-        <activity android:name=".FoodFinderActivity"
+        <activity android:name=".PlaceFinderActivity"
             	  android:theme="@android:style/Theme.NoTitleBar"
             	  />
         <activity android:name=".CriteriaSummaryActivity"

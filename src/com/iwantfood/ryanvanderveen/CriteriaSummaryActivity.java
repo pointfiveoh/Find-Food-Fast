@@ -71,7 +71,7 @@ public class CriteriaSummaryActivity extends Activity {
 		CriteriaSummaryActivity.this.startActivity(CriteriaIntent);
     }
 	private void goToPlaces() {
-		Intent PlacesIntent = new Intent(CriteriaSummaryActivity.this, FoodFinderActivity.class);
+		Intent PlacesIntent = new Intent(CriteriaSummaryActivity.this, PlaceFinderActivity.class);
 		CriteriaSummaryActivity.this.startActivity(PlacesIntent);
 	}
 	

@@ -10,11 +10,11 @@
 # view AndroidManifest.xml #generated:22
 -keep class com.iwantfood.ryanvanderveen.CriteriaSummaryActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:19
--keep class com.iwantfood.ryanvanderveen.FoodFinderActivity { <init>(...); }
-
 # view AndroidManifest.xml #generated:8
 -keep class com.iwantfood.ryanvanderveen.MainActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:19
+-keep class com.iwantfood.ryanvanderveen.PlaceFinderActivity { <init>(...); }
 
 # onClick res/layout/main.xml #generated:11
 # onClick res/layout/main.xml #generated:18
