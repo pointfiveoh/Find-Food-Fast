@@ -24,7 +24,4 @@ public class AlertFragment extends DialogFragment {
 		
 		return null;
 	}
-	
-	
-	
 }

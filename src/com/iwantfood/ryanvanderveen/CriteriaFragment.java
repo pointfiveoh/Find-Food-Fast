@@ -1,5 +1,7 @@
 package com.iwantfood.ryanvanderveen;
 
+import com.iwantfood.ryanvanderveen.Criteria.*;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
@@ -62,15 +64,15 @@ public class CriteriaFragment extends ListFragment {
 		switch (args.getInt("num")) {
 		case 0:
 			setListAdapter(new ArrayAdapter<String>(getActivity(), 
-					android.R.layout.simple_list_item_1, ec.criteria));
+					android.R.layout.simple_list_item_1, ec.getCriteria()));
 			break;
 		case 1:
 			setListAdapter(new ArrayAdapter<String>(getActivity(), 
-					android.R.layout.simple_list_item_1, hc.criteria));
+					android.R.layout.simple_list_item_1, hc.getCriteria()));
 			break;
 		case 2:
 			setListAdapter(new ArrayAdapter<String>(getActivity(), 
-					android.R.layout.simple_list_item_1, cc.criteria));
+					android.R.layout.simple_list_item_1, cc.getCriteria()));
 			break;
 		default:
 			Log.wtf("WTFWTFWTF", "default case hit on switch in CriteriaFragment.onActivityCreated");		
