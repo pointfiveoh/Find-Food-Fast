@@ -7,21 +7,14 @@ import android.util.Log;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
 import com.google.api.client.googleapis.GoogleHeaders;
 import com.google.api.client.http.GenericUrl;
-import com.google.api.client.http.HttpParser;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestFactory;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
-import com.google.api.client.http.json.JsonHttpParser;
 import com.google.api.client.json.JsonObjectParser;
-import com.google.api.client.json.JsonFactory;
-//import com.google.api.client.json.jackson.JacksonFactory;
-//import org.codehaus.jackson.JsonFactory;
-
 import com.iwantfood.ryanvanderveen.Places.*;
  
-@SuppressWarnings("deprecation")
 public class GooglePlaces {
  
     /** Global instance of the HTTP transport. */
@@ -102,23 +95,11 @@ public class GooglePlaces {
             throw e;
         }
     }
- 
+     
     /**
-     * Creating http request Factory - THIS METHOD IS DEPRECATED.
-     * */
-    /*public static HttpRequestFactory createRequestFactory(
-            final HttpTransport transport) {
-        return transport.createRequestFactory(new HttpRequestInitializer() {
-            public void initialize(HttpRequest request) {
-                GoogleHeaders headers = new GoogleHeaders();
-                headers.setApplicationName("AndroidHive-Places-Test");
-                request.setHeaders(headers);
-                JsonHttpParser parser = new JsonHttpParser(new JacksonFactory());
-                request.addParser(parser);
-            }
-        });
-    }*/
-    
+     * 	This method returns an HttpRequestFactory that is used for
+     * 	all the HttpRequest object building for ease of use.
+     */
     public static HttpRequestFactory createRequestFactory(
     		final HttpTransport transport) {
     	return transport.createRequestFactory(new HttpRequestInitializer() {
@@ -126,7 +107,6 @@ public class GooglePlaces {
     			GoogleHeaders headers = new GoogleHeaders();
                 headers.setApplicationName("Find-Food-Fast");
                 request.setHeaders(headers);
-                //JsonHttpParser parser = new JsonHttpParser(new JacksonFactory());
                 JsonObjectParser parser = new JsonObjectParser(new AndroidJsonFactory());
                 request.setParser(parser);
     		}

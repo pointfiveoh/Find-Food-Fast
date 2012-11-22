@@ -5,10 +5,12 @@ import com.iwantfood.ryanvanderveen.Places.*;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Html;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
  
 public class SinglePlaceActivity extends Activity {
@@ -25,7 +27,7 @@ public class SinglePlaceActivity extends Activity {
     GooglePlaces googlePlaces;
  
     // Place Details
-    PlaceDetail placeDetails;
+    PlaceDetail placeDetail;
  
     // Progress dialog
     ProgressDialog pDialog;
@@ -48,6 +50,27 @@ public class SinglePlaceActivity extends Activity {
         new LoadSinglePlaceDetails().execute(reference);
     }
  
+    public void goToMapsClick(View v) {
+    	switch(v.getId()) {
+    	case R.id.findPlaceGoogleMapsButton:
+    		goToGoogleMaps();
+    		break;
+    	default:
+    		Log.wtf("WTFWTFWTF", "This should never occur SinglePlaceActivity.goToGoogleMaps");
+    		break;
+    	}
+    }
+    
+    public void goToGoogleMaps() {
+    	Uri uri = Uri.parse("geo:" 
+    			+ Double.toString(placeDetail.result.geometry.location.lat) 
+    			+ ","
+    			+ Double.toString(placeDetail.result.geometry.location.lng));
+    	Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+    	
+    	startActivity(intent);
+    }
+    
     /**
      * Background Async Task to Load Google places
      * */
@@ -77,14 +100,14 @@ public class SinglePlaceActivity extends Activity {
  
             // Check if used is connected to Internet
             try {
-                placeDetails = googlePlaces.getPlaceDetails(reference);
+            	placeDetail = googlePlaces.getPlaceDetails(reference);
  
             } catch (Exception e) {
                 e.printStackTrace();
             }
             return null;
         }
- 
+
         /**
          * After completing background task Dismiss the progress dialog
          * **/
@@ -97,18 +120,18 @@ public class SinglePlaceActivity extends Activity {
                     /**
                      * Updating parsed Places into LISTVIEW
                      * */
-                    if(placeDetails != null){
-                        String status = placeDetails.status;
+                    if(placeDetail != null){
+                        String status = placeDetail.status;
  
                         // check place deatils status
                         // Check for all possible status
                         if(status.equals("OK")){
-                            if (placeDetails.result != null) {
-                                String name = placeDetails.result.name;
-                                String address = placeDetails.result.formatted_address;
-                                String phone = placeDetails.result.formatted_phone_number;
-                                String latitude = Double.toString(placeDetails.result.geometry.location.lat);
-                                String longitude = Double.toString(placeDetails.result.geometry.location.lng);
+                            if (placeDetail.result != null) {
+                                String name = placeDetail.result.name;
+                                String address = placeDetail.result.formatted_address;
+                                String phone = placeDetail.result.formatted_phone_number;
+                                String latitude = Double.toString(placeDetail.result.geometry.location.lat);
+                                String longitude = Double.toString(placeDetail.result.geometry.location.lng);
  
                                 Log.d("Place ", name + address + phone + latitude + longitude);
  
@@ -173,12 +196,8 @@ public class SinglePlaceActivity extends Activity {
                                 "Sorry error occured.",
                                 false);
                     }
- 
                 }
             });
- 
         }
- 
     }
- 
 }

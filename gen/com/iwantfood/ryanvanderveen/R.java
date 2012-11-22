@@ -24,10 +24,11 @@ public final class R {
         public static final int choicesTextView=0x7f070006;
         public static final int criteria_pager=0x7f070000;
         public static final int findFoodButton=0x7f070005;
+        public static final int findPlaceGoogleMapsButton=0x7f070011;
         public static final int iwantfoodButton=0x7f070008;
         public static final int jkButton=0x7f070009;
         public static final int location=0x7f070010;
-        public static final int menu_settings=0x7f070011;
+        public static final int menu_settings=0x7f070012;
         public static final int name=0x7f07000d;
         public static final int pager_title_strip=0x7f070001;
         public static final int phone=0x7f07000f;

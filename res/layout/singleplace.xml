@@ -49,5 +49,15 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dip"
         android:layout_marginBottom="5dip"/>
+    
+    <!-- Find this place using Google Maps App -->
+ 	<Button
+ 	    android:id="@+id/findPlaceGoogleMapsButton"
+ 	    android:layout_width="fill_parent"
+ 	    android:layout_height="wrap_content"
+ 	    android:layout_marginTop="15dp"
+ 	    android:layout_marginBottom="15dp"
+ 	    android:onClick="goToMapsClick"
+ 	    android:text="Find this Place on Map >>>"/>
  
 </LinearLayout>

@@ -19,6 +19,9 @@
 # view AndroidManifest.xml #generated:38
 -keep class com.iwantfood.ryanvanderveen.SinglePlaceActivity { <init>(...); }
 
+# onClick res/layout/singleplace.xml #generated:54
+-keepclassmembers class * { *** goToMapsClick(...); }
+
 # onClick res/layout/main.xml #generated:11
 # onClick res/layout/main.xml #generated:18
 -keepclassmembers class * { *** mainButtonClicked(...); }
