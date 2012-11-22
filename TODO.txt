@@ -1,0 +1,29 @@
+TODOs (in any order, not listed by importance...):
+
+Refactor the last "half" of the application activity into Fragments.
+	-Ideally, this would include:
+	1.Maintain the current layout in a FragmentActivity instead of just an Activity
+	2.Add a bar at the top that has at least a:
+		a. Back button - for going back one page/fragment
+		b. Start Over button - go back to the beginning of the app
+	3.Removing redundant code
+
+
+
+*TEMPORARILY* hard-code in the "energy" selection, so that the app (for now) will only display food sources (not just restaurants) within 1km of the location gathered from the phone/gps/network location. This way testing can be moved off of an emulator and onto a physical device (for testing the location services portion of the app in real-world scenarios). See the radius parameter that can be passed (the radius parameter is actually req'd).
+
+
+
+Begin RnD into how to parameterise the calls to google places API. This is the heart of the application. Many apps exist that can find a food source (although most just do restaurants/fast food), few actually narrow down the search results via intuitive questions and/or selections such as the first "half" of the application. Currently these selection mean nothing and do not influence the results of calls to the google places api. There are some parameters that can be passed via the HTTPREQUEST (such as radius mentioned earlier), personally I have done little research into them. This TODO will require some out of the box brainwork. 
+
+
+
+Style. Cleaning up the xml, following I18N standards (such as putting all text into the strings.xml and referencing the string id. Using Relative position as much as possible, multi-device and/or different screen size considerations. Centering buttons, standardizing text sizes and fonts. This is an ongoing process as the app matures, but definitely not one that can be ignored as it must look polished for release into Google Play (seriously, if we - and by we I mean anyone who ever decides to commit, if only once - want to release an app it should be just as awesome UX and UI-wise as functional-wise).
+
+
+
+Feel free to *insert TODO here* if you think of more.
+
+
+
+ProGuard - lower importantce, but polish is polish and this is a polishing tool. This is obviously something configured before launch to drastically reduce the size of the .apk and also add obfuscation to the code to prevent piracy. Although piracy is not a concern (as plans so far is to release for free), keeping the code at least difficult to reverse engineer would be nice.
