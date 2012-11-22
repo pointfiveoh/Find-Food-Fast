@@ -124,11 +124,11 @@ public class GooglePlaces {
     	return transport.createRequestFactory(new HttpRequestInitializer() {
     		public void initialize(HttpRequest request) {
     			GoogleHeaders headers = new GoogleHeaders();
-                headers.setApplicationName("AndroidHive-Places-Test");
+                headers.setApplicationName("Find-Food-Fast");
                 request.setHeaders(headers);
                 //JsonHttpParser parser = new JsonHttpParser(new JacksonFactory());
                 JsonObjectParser parser = new JsonObjectParser(new AndroidJsonFactory());
-                request.addParser((HttpParser) parser);
+                request.setParser(parser);
     		}
     	});
     }

@@ -16,6 +16,9 @@
 # view AndroidManifest.xml #generated:26
 -keep class com.iwantfood.ryanvanderveen.PlaceFinderActivity { <init>(...); }
 
+# view AndroidManifest.xml #generated:34
+-keep class com.iwantfood.ryanvanderveen.SinglePlaceActivity { <init>(...); }
+
 # onClick res/layout/main.xml #generated:11
 # onClick res/layout/main.xml #generated:18
 -keepclassmembers class * { *** mainButtonClicked(...); }
