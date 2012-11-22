@@ -4,16 +4,20 @@ import org.apache.http.client.HttpResponseException;
 
 import android.util.Log;
  
+import com.google.api.client.extensions.android.json.AndroidJsonFactory;
 import com.google.api.client.googleapis.GoogleHeaders;
 import com.google.api.client.http.GenericUrl;
+import com.google.api.client.http.HttpParser;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestFactory;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.http.json.JsonHttpParser;
-import com.google.api.*;
-import com.google.api.client.json.jackson.JacksonFactory;
+import com.google.api.client.json.JsonObjectParser;
+import com.google.api.client.json.JsonFactory;
+//import com.google.api.client.json.jackson.JacksonFactory;
+//import org.codehaus.jackson.JsonFactory;
 
 import com.iwantfood.ryanvanderveen.Places.*;
  
@@ -24,7 +28,7 @@ public class GooglePlaces {
     private static final HttpTransport HTTP_TRANSPORT = new NetHttpTransport();
  
     // Google API Key
-    private static final String API_KEY = "AIzaSyCRLa4LQZWNQBcjCYcIVYA45i9i8zfClqc";
+    private static final String API_KEY = "AIzaSyBp_ZBg-43O_sZymW82se72zt20KDEQKF4";
  
     // Google Places serach url's
     private static final String PLACES_SEARCH_URL = "https://maps.googleapis.com/maps/api/place/search/json?";
@@ -100,9 +104,9 @@ public class GooglePlaces {
     }
  
     /**
-     * Creating http request Factory
+     * Creating http request Factory - THIS METHOD IS DEPRECATED.
      * */
-    public static HttpRequestFactory createRequestFactory(
+    /*public static HttpRequestFactory createRequestFactory(
             final HttpTransport transport) {
         return transport.createRequestFactory(new HttpRequestInitializer() {
             public void initialize(HttpRequest request) {
@@ -113,6 +117,19 @@ public class GooglePlaces {
                 request.addParser(parser);
             }
         });
+    }*/
+    
+    public static HttpRequestFactory createRequestFactory(
+    		final HttpTransport transport) {
+    	return transport.createRequestFactory(new HttpRequestInitializer() {
+    		public void initialize(HttpRequest request) {
+    			GoogleHeaders headers = new GoogleHeaders();
+                headers.setApplicationName("AndroidHive-Places-Test");
+                request.setHeaders(headers);
+                //JsonHttpParser parser = new JsonHttpParser(new JacksonFactory());
+                JsonObjectParser parser = new JsonObjectParser(new AndroidJsonFactory());
+                request.addParser((HttpParser) parser);
+    		}
+    	});
     }
- 
 }
