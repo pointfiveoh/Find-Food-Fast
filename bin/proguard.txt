@@ -4,19 +4,19 @@
 # view res/layout/criteriafragmentpageradapter.xml #generated:1
 -keep class android.support.v4.view.ViewPager { <init>(...); }
 
-# view AndroidManifest.xml #generated:21
+# view AndroidManifest.xml #generated:26
 -keep class com.iwantfood.ryanvanderveen.CriteriaFragmentActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:30
+# view AndroidManifest.xml #generated:34
 -keep class com.iwantfood.ryanvanderveen.CriteriaSummaryActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:13
+# view AndroidManifest.xml #generated:18
 -keep class com.iwantfood.ryanvanderveen.MainActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:26
+# view AndroidManifest.xml #generated:30
 -keep class com.iwantfood.ryanvanderveen.PlaceFinderActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:34
+# view AndroidManifest.xml #generated:38
 -keep class com.iwantfood.ryanvanderveen.SinglePlaceActivity { <init>(...); }
 
 # onClick res/layout/main.xml #generated:11
