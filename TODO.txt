@@ -7,6 +7,8 @@ Refactor the last "half" of the application activity into Fragments.
 		a. Back button - for going back one page/fragment
 		b. Start Over button - go back to the beginning of the app
 	3.Removing redundant code
+	
+	-Two fragments, one listfragment and the other is the singleplaceactivity fragment similar to Figure 1 on this page: http://developer.android.com/guide/components/fragments.html
 
 
 
