@@ -5,7 +5,6 @@ import java.util.List;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -14,13 +13,9 @@ import android.support.v4.app.ListFragment;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.Menu;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.AdapterView;
-import android.widget.ListView;
 
 public class CriteriaFragmentActivity extends FragmentActivity implements CriteriaFragment.OnListItemClickedListener{
-	private static final int 		NUM_ITEMS = 3;
+	//private static final int 		NUM_ITEMS = 3;
 	private List<CriteriaFragment> 	fragments;					//individual criterion fragment
     private SectionsPagerAdapter 	mSectionsPagerAdapter;		//adapter for the pager
     private ViewPager				mViewPager;					//the actual content for the viewpager

@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
@@ -21,7 +20,6 @@ public class CriteriaSummaryActivity extends Activity {
 		
 		Log.d("DEBUGDEBUGDEBUG", CriteriaSummary.staticToString());
 		
-		LayoutInflater mInflater = LayoutInflater.from(this);
 		View rootLinearLayout = (LinearLayout)findViewById(R.id.rootCriteriaSummary);
 		
 		TextView tv = new TextView(this);

@@ -1,11 +1,7 @@
 package com.iwantfood.ryanvanderveen;
 
-import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.support.v4.app.DialogFragment;
 
 public class AlertFragment extends DialogFragment {
@@ -20,7 +16,7 @@ public class AlertFragment extends DialogFragment {
 
 	@Override
 	public Dialog onCreateDialog(Bundle savedInstanceState) {
-		int title = getArguments().getInt("title");
+		//int title = getArguments().getInt("title");
 		
 		return null;
 	}

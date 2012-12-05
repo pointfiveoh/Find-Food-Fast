@@ -3,18 +3,15 @@ package com.iwantfood.ryanvanderveen;
 import com.iwantfood.ryanvanderveen.Criteria.*;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 
 public class CriteriaFragment extends ListFragment {
 	public static final String ARG_SECTION_NUMBER = "section_number";
