@@ -3,171 +3,89 @@ package com.iwantfood.ryanvanderveen;
 import android.content.res.Resources;
 
 public class CriteriaSummary {
-	private static String energyChoiceSelection;
-	private static String hungerChoiceSelection;
-	private static String costChoiceSelection;
+	//Static variables for preserving selection state (hopefully)
+	private static int energyChoiceSelection;
+	private static int hungerChoiceSelection;
+	private static int costChoiceSelection;
+	//Resources for accessing UI elements
 	private static Resources res;
 	
-	public enum energyChoice {
-		LOWENERGY(res.getStringArray(R.array.EnergyCriteria)[0], 0),
-		MEDIUMENERGY(res.getStringArray(R.array.EnergyCriteria)[1], 1),
-		HIGHENERGY(res.getStringArray(R.array.EnergyCriteria)[2], 2);
-		
-		private String stringValue;
-		private int intValue;
-		private energyChoice(String s, int i) {
-			stringValue = s;
-			intValue = i;
+	public static enum energyChoice {
+		LOWENERGY(res.getStringArray(R.array.EnergyCriteria)[0]),
+		MEDIUMENERGY(res.getStringArray(R.array.EnergyCriteria)[1]),
+		HIGHENERGY(res.getStringArray(R.array.EnergyCriteria)[2]);
+
+		private String value;
+		private energyChoice(String _value) {
+			value = _value;	
 		}
-		
-		public String toString() {
-			return stringValue;
+		public String getEnergyChoice() {   
+			return value;
 		}
 	}
 	
-	public enum hungerChoice {
-		LOWHUNGER(res.getStringArray(R.array.HungerCriteria)[0], 0),
-		MEDIUMHUNGER(res.getStringArray(R.array.HungerCriteria)[1], 1),
-		HIGHHUNGER(res.getStringArray(R.array.HungerCriteria)[2], 2);
+	public static enum hungerChoice {
+		LOWHUNGER(res.getStringArray(R.array.HungerCriteria)[0]),
+		MEDIUMHUNGER(res.getStringArray(R.array.HungerCriteria)[1]),
+		HIGHHUNGER(res.getStringArray(R.array.HungerCriteria)[2]);
 		
-		private String stringValue;
-		private int intValue;
-		private hungerChoice(String s, int i) {
-			stringValue = s;
-			intValue = i;
+		private String value;
+		private hungerChoice(String _value) {
+			value = _value;	
 		}
-		public String toString() {
-			return stringValue;
+		public String getHungerChoice() {
+			return value;
 		}
 	}
 	
-	public enum costChoice {
-		LOWCOST(res.getStringArray(R.array.CostCriteria)[0], 0),
-		MEDIUMCOST(res.getStringArray(R.array.CostCriteria)[1], 1),
-		HIGHCOST(res.getStringArray(R.array.CostCriteria)[2], 2);
+	public static enum costChoice {
+		LOWCOST(res.getStringArray(R.array.CostCriteria)[0]),
+		MEDIUMCOST(res.getStringArray(R.array.CostCriteria)[1]),
+		HIGHCOST(res.getStringArray(R.array.CostCriteria)[2]);
 		
-		private String stringValue;
-		private int intValue;
-		private costChoice(String s, int i) {
-			stringValue = s;
-			intValue = i;
+		private String value;
+		private costChoice(String _value) {
+			value = _value;	
 		}
-		public String toString() {
-			return stringValue;
+		public String getCostChoice() {
+			return value;
 		}
 	}
 	
 	public CriteriaSummary(int energyChoice, 
 			int hungerChoice, 
 			int costChoice, Resources _res) {
-		
 		res = _res;
-		setEnergyChoiceMessageByInt(energyChoice);
-		setHungerChoiceMessageByInt(hungerChoice);
-		setCostChoiceMessageByInt(costChoice);
+		setEnergyChoiceSelection(energyChoice);
+		setHungerChoiceSelection(hungerChoice);
+		setCostChoiceSelection(costChoice);
 	}
 	
-	/*Get/Set for static vars*/
-	public static String getEnergyChoiceMessage() { return energyChoiceSelection;	}
-	public static void setEnergyChoiceMessage(String energyChoiceMessage) { CriteriaSummary.energyChoiceSelection = energyChoiceMessage; 	}
-	public static String getHungerChoiceMessage() { return hungerChoiceSelection; }
-	public static void setHungerChoiceMessage(String hungerChoiceMessage) {	CriteriaSummary.hungerChoiceSelection = hungerChoiceMessage; 	}
-	public static String getCostChoiceMessage() { return costChoiceSelection; }
-	public static void setCostChoiceMessage(String costChoiceMessage) { CriteriaSummary.costChoiceSelection = costChoiceMessage; }
+	/* Get & Set Energy Selection */
+	public static int getEnergyChoiceSelection() { return energyChoiceSelection; }
+	public static void setEnergyChoiceSelection(int energyChoiceSelection) { CriteriaSummary.energyChoiceSelection = energyChoiceSelection;	}
+	/* Get & Set Hunger Selection */
+	public static int getHungerChoiceSelection() { return hungerChoiceSelection; }
+	public static void setHungerChoiceSelection(int hungerChoiceSelection) { CriteriaSummary.hungerChoiceSelection = hungerChoiceSelection; }
+	/* Get & Set Cost Selection */
+	public static int getCostChoiceSelection() { return costChoiceSelection;	}
+	public static void setCostChoiceSelection(int costChoiceSelection) { CriteriaSummary.costChoiceSelection = costChoiceSelection; }	
+	/* Allow instantiation (setting) of Resource variable */
 	public static void setResources(Resources _res) { CriteriaSummary.res = _res; }
-	/*Get/Set the static vars via integers*/
-	public static void setEnergyChoiceMessageByInt(int energyChoiceMessage) { CriteriaSummary.energyChoiceSelection = generateEnergyChoice(energyChoiceMessage); 	}
-	public static void setHungerChoiceMessageByInt(int hungerChoiceMessage) { CriteriaSummary.hungerChoiceSelection = generateHungerChoice(hungerChoiceMessage); 	}
-	public static void setCostChoiceMessageByInt(int costChoiceMessage) { CriteriaSummary.costChoiceSelection = generateCostChoice(costChoiceMessage); }
-	
-	
-	
-	public static double getEnergy() {
-		if (energyChoiceSelection != null) {
-			//switch (energyChoiceMessage) {
-			
-			//}
-		}
+
+	public static String getChoices() {
+		String retVal = "";
 		
-		return 0.0;
-	}
-	
-	public static void getHunger() {
-		//do something
-		//do something more
-	}   
-	
-	public static void getCost() {
-		//do something
-	}
-	
-	private static String generateEnergyChoice(int choice) {
-		String returnValue = "";
-		String[] choices = res.getStringArray(R.array.EnergyCriteria);
-		switch (choice) {
-		case 0:
-			returnValue = choices[0];
-			break;
-		case 1:
-			returnValue = choices[1];
-			break;
-		case 2:
-			returnValue = choices[2];
-			break;
-		default:
-			
-			break;
+		if (energyChoiceSelection < 0 || energyChoiceSelection > 2){
+			if (hungerChoiceSelection < 0 || hungerChoiceSelection > 2){
+				if (costChoiceSelection < 0 || costChoiceSelection > 2){
+					retVal += energyChoice.values()[energyChoiceSelection] + " ";
+					retVal += hungerChoice.values()[hungerChoiceSelection] + " ";
+					retVal += costChoice.values()[costChoiceSelection] + " ";
+				}
+			}
 		}
-		return returnValue;
-	}
-	
-	private static String generateHungerChoice(int choice){
-		String returnValue = "";
-		String[] choices = res.getStringArray(R.array.HungerCriteria);
-		switch (choice) {
-		case 0:
-			returnValue = choices[0];
-			break;
-		case 1:
-			returnValue = choices[1];
-			break;
-		case 2:
-			returnValue = choices[2];
-			break;
-		default:
 			
-			break;
-		}
-		return returnValue;
+		return retVal;
 	}
-	
-	private static String generateCostChoice(int choice) {
-		String returnValue = "";
-		String[] choices = res.getStringArray(R.array.CostCriteria);
-		switch (choice) {
-		case 0:
-			returnValue = choices[0];
-			break;
-		case 1:
-			returnValue = choices[1];
-			break;
-		case 2:
-			returnValue = choices[2];
-			break;
-		default:
-			
-			break;
-		}
-		return returnValue;
-	}
-	
-	public static String staticToString() {
-		String toString = "";
-		
-		toString = energyChoiceSelection + " ";
-		toString += hungerChoiceSelection + " ";
-		toString += costChoiceSelection + " ";
-		
-		return toString;		
-	}	
 }

@@ -1,44 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest android:versionCode="1" android:versionName="1.0"
     package="com.iwantfood.ryanvanderveen" xmlns:android="http://schemas.android.com/apk/res/android">
-    
     <!-- The minSdkVersion attribute will filter the App on Google Play to those
     devices that are at a min sdk of 14 (ICS) -->
     <uses-sdk android:minSdkVersion="14"/>
-    
     <!-- Permissions -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <!-- The actual drawable icon for the app -->
     <application android:icon="@drawable/ic_launcher" android:label="@string/app_name">
-        
         <!-- Activities defined here. The first one is the first activity started on initial launch -->
-        <activity android:label="@string/app_name" android:name="MainActivity"
-            android:theme="@android:style/Theme.NoTitleBar"            >
+        <activity android:label="@string/app_name"
+            android:name="MainActivity" android:theme="@android:style/Theme.NoTitleBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        
-        <activity android:name="CriteriaFragmentActivity"
-            	  android:theme="@android:style/Theme.NoTitleBar" 
-            	  />
-        
-        <activity android:name=".PlaceFinderActivity"
-            	  android:theme="@android:style/Theme.NoTitleBar"
-            	  />
-        
-        <activity android:name=".CriteriaSummaryActivity"
-            	  android:theme="@android:style/Theme.NoTitleBar"
-            	  />
-        
-        <activity android:name=".SinglePlaceActivity"
-            	  android:theme="@android:style/Theme.NoTitleBar"
-            	  />
-        
+        <activity android:name="CriteriaFragmentActivity" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".PlaceFinderActivity" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".CriteriaSummaryActivity" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".SinglePlaceActivity" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".PlaceFragmentActivity"/>
     </application>
-    
 </manifest>

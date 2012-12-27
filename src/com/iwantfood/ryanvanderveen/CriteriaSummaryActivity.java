@@ -18,12 +18,12 @@ public class CriteriaSummaryActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.criteriasummary);
 		
-		Log.d("DEBUGDEBUGDEBUG", CriteriaSummary.staticToString());
+		Log.d("DEBUGDEBUGDEBUG", CriteriaSummary.getChoices());
 		
 		View rootLinearLayout = (LinearLayout)findViewById(R.id.rootCriteriaSummary);
 		
 		TextView tv = new TextView(this);
-		tv.setText(CriteriaSummary.staticToString());
+		tv.setText(CriteriaSummary.getChoices());
 		tv.setId(6);
 		tv.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT,LayoutParams.WRAP_CONTENT));
 		((LinearLayout) rootLinearLayout).addView(tv);
@@ -35,10 +35,11 @@ public class CriteriaSummaryActivity extends Activity {
     	switch(v.getId()) {
     	case R.id.restartCriteriaButton:
     		goToCriteria();
+    		//redo criteria (clear previous selections?)
     		break;
     	case R.id.findFoodButton:
     		goToPlaces();
-    		//go to the places API implementation portion of the app
+    		//go to the places API portion of the app
     		break;
     	}
 	}

@@ -9,7 +9,6 @@ import android.location.LocationProvider;
 import android.os.Bundle;
 import android.provider.Settings;
 
-
 public class FoodFinderActivity extends Activity {
 	LocationManager 	locationManager;
 	LocationProvider 	locationProvider;

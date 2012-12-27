@@ -7,19 +7,22 @@
 # view res/layout/fragmentlayout.xml #generated:6
 -keep class com.example.android.apis.app.FragmentLayout$TitlesFragment { <init>(...); }
 
-# view AndroidManifest.xml #generated:26
+# view AndroidManifest.xml #generated:21
 -keep class com.iwantfood.ryanvanderveen.CriteriaFragmentActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:34
+# view AndroidManifest.xml #generated:23
 -keep class com.iwantfood.ryanvanderveen.CriteriaSummaryActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:18
+# view AndroidManifest.xml #generated:14
 -keep class com.iwantfood.ryanvanderveen.MainActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:30
+# view AndroidManifest.xml #generated:22
 -keep class com.iwantfood.ryanvanderveen.PlaceFinderActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:38
+# view AndroidManifest.xml #generated:25
+-keep class com.iwantfood.ryanvanderveen.PlaceFragmentActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:24
 -keep class com.iwantfood.ryanvanderveen.SinglePlaceActivity { <init>(...); }
 
 # onClick res/layout/singleplace.xml #generated:54

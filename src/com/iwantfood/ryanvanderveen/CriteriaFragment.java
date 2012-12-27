@@ -96,17 +96,17 @@ public class CriteriaFragment extends ListFragment {
 	public void onListItemClick(ListView l, View v, int position, long id) {
 		switch (mNum) {
 		case 0:
-			CriteriaSummary.setEnergyChoiceMessageByInt(position);
+			CriteriaSummary.setEnergyChoiceSelection(position);
 			//Log.i("Energy Choice", "Position selected was  " + position);
 			clickCallback.onListItemClicked(mNum);
 			break;
 		case 1:
-			CriteriaSummary.setHungerChoiceMessageByInt(position);
+			CriteriaSummary.setHungerChoiceSelection(position);
 			//Log.i("Hunger Choice", "Position selected was  " + position);
 			clickCallback.onListItemClicked(mNum);
 			break;
 		case 2:
-			CriteriaSummary.setCostChoiceMessageByInt(position);
+			CriteriaSummary.setCostChoiceSelection(position);
 			//Log.i("Cost Choice", "Position selected was  " + position);
 			clickCallback.onListItemClicked(mNum); 
 			break;
