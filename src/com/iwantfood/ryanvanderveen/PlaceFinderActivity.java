@@ -4,12 +4,14 @@ import com.iwantfood.ryanvanderveen.Places.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
  
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
 import android.text.Html;
 import android.util.Log;
 import android.view.View;
@@ -23,37 +25,20 @@ import android.widget.TextView;
 
 
 public class PlaceFinderActivity extends Activity {
-
-    // flag for Internet connection status
-    Boolean isInternetPresent = false;
- 
-    // Connection detector class
-    ConnectionDetector cd;
- 
-    // Alert Dialog Manager
-    AlertDialogManager alert = new AlertDialogManager();
- 
-    // Google Places
-    GooglePlaces googlePlaces;
- 
-    // Places List
-    PlaceCollection nearPlaces;
- 
-    // GPS Location
-    GPSTracker gps;
- 
-    // Button
-    Button btnShowOnMap;
- 
-    // Progress dialog
-    ProgressDialog pDialog;
- 
-    // Places Listview
-    ListView lv;
- 
-    // ListItems data
-    ArrayList<HashMap<String, String>> placesListItems = new ArrayList<HashMap<String,String>>();
- 
+    
+    Boolean 				isInternetPresent = false; // flag for Internet connection status   
+    ConnectionDetector 		cd;	// Connection detector class 
+    AlertDialogManager 		alert = new AlertDialogManager(); // Alert Dialog Manager
+    GooglePlaces 			googlePlaces; // Google Places
+    PlaceCollection 		nearPlaces; // Places List
+    GPSTracker 				gps; // GPS Location
+    Button 					btnShowOnMap; // Button
+    ProgressDialog 			pDialog; // Progress dialog
+    ListView 				lv; // Places Listview
+    ArrayList<HashMap<String, String>> placesListItems = new ArrayList<HashMap<String,String>>(); // ListItems data
+    List<SinglePlaceFragment>	fragments; //List of dynamically created SinglePlaceFragments
+    android.app.FragmentManager fragmentManager = getFragmentManager();	//fragment Manager for dynamically manipulating fragments
+        
     // KEY Strings
     public static String KEY_REFERENCE = "reference"; // id of the place
     public static String KEY_NAME = "name"; // name of the place
@@ -73,6 +58,7 @@ public class PlaceFinderActivity extends Activity {
             alert.showAlertDialog(PlaceFinderActivity.this, "Internet Connection Error",
                     "Please connect to working Internet connection", false);
             // stop executing code by return
+            //TODO: potentially create a link to turning on either WIFI or data, if neither is present
             return;
         }
  
@@ -143,6 +129,8 @@ public class PlaceFinderActivity extends Activity {
         }); 
     }
  
+    
+    
     /**
      * Background Async Task to Load Google places
      * */
@@ -176,7 +164,7 @@ public class PlaceFinderActivity extends Activity {
                 String types = "cafe|restaurant"; // Listing places only cafes, restaurants
  
                 // Radius in meters - increase this value if you don't find any places
-                double radius = 1000; // 1000 meters 
+                double radius = 10000; // 1000 meters 
  
                 // get nearest places
                 nearPlaces = googlePlaces.search(gps.getLatitude(),
@@ -223,11 +211,15 @@ public class PlaceFinderActivity extends Activity {
  
                                 // adding HashMap to ArrayList
                                 placesListItems.add(map);
+                                //TODO: build fragments here?
+                                SinglePlaceFragment spf = new SinglePlaceFragment();
+                                fragments.add(spf);
+                                
                             }
                             // list adapter
                             ListAdapter adapter = new SimpleAdapter(PlaceFinderActivity.this, placesListItems,
                                     R.layout.placedetails,
-                                    new String[] { KEY_REFERENCE, KEY_NAME}, new int[] {
+                                    new String[] { KEY_REFERENCE, KEY_NAME }, new int[] {
                                             R.id.placereference, R.id.placename });
  
                             // Adding data into listview
@@ -272,15 +264,6 @@ public class PlaceFinderActivity extends Activity {
                     }
                 }
             });
- 
         }
- 
-    }
- 
-   /* @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_main, menu);
-        return true;
-    }*/
- 
+    } 
 }

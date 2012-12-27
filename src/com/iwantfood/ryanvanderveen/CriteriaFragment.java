@@ -14,7 +14,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class CriteriaFragment extends ListFragment {
-	public static final String ARG_SECTION_NUMBER = "section_number";
+	//public static final String ARG_SECTION_NUMBER = "section_number";
 	private int mNum;	//used for position/num tracking (from args etc)
 	private Resources resources;
 	private EnergyCriteria ec;
