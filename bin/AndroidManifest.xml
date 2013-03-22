@@ -18,10 +18,11 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name="CriteriaFragmentActivity" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".CriteriaActivityFragment" android:theme="@android:style/Theme.NoTitleBar"/>
         <activity android:name=".PlaceFinderActivity" android:theme="@android:style/Theme.NoTitleBar"/>
         <activity android:name=".CriteriaSummaryActivity" android:theme="@android:style/Theme.NoTitleBar"/>
-        <activity android:name=".SinglePlaceActivity" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".SinglePlaceActivityFragment" android:theme="@android:style/Theme.NoTitleBar"/>
         <activity android:name=".PlaceFragmentActivity"/>
+        <activity android:name=".Decisions.DecisionsActivity"/>
     </application>
 </manifest>

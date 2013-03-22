@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+    <table name="activity">
+        <row id="1">
+            <column id="ActivityName">
+                Snowboarding
+            </column>
+            <column id="IsGroupActivity">
+                True
+            </column>
+            <column id="IsSportingActivity">
+                True
+            </column>
+            
+        </row>
+    </table>
+</data>

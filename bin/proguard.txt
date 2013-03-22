@@ -8,10 +8,13 @@
 -keep class com.example.android.apis.app.FragmentLayout$TitlesFragment { <init>(...); }
 
 # view AndroidManifest.xml #generated:21
--keep class com.iwantfood.ryanvanderveen.CriteriaFragmentActivity { <init>(...); }
+-keep class com.iwantfood.ryanvanderveen.CriteriaActivityFragment { <init>(...); }
 
 # view AndroidManifest.xml #generated:23
 -keep class com.iwantfood.ryanvanderveen.CriteriaSummaryActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:26
+-keep class com.iwantfood.ryanvanderveen.Decisions.DecisionsActivity { <init>(...); }
 
 # view AndroidManifest.xml #generated:14
 -keep class com.iwantfood.ryanvanderveen.MainActivity { <init>(...); }
@@ -23,7 +26,7 @@
 -keep class com.iwantfood.ryanvanderveen.PlaceFragmentActivity { <init>(...); }
 
 # view AndroidManifest.xml #generated:24
--keep class com.iwantfood.ryanvanderveen.SinglePlaceActivity { <init>(...); }
+-keep class com.iwantfood.ryanvanderveen.SinglePlaceActivityFragment { <init>(...); }
 
 # onClick res/layout/singleplace.xml #generated:54
 -keepclassmembers class * { *** goToMapsClick(...); }

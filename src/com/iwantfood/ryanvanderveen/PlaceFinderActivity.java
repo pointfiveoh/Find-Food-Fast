@@ -133,7 +133,7 @@ public class PlaceFinderActivity extends Activity {
                 
                 // Starting new intent
                 Intent in = new Intent(getApplicationContext(),
-                        SinglePlaceActivity.class);
+                		SinglePlaceActivityFragment.class);
  
                 // Sending place refrence id to single place activity
                 // place refrence id used to get "Place full details"

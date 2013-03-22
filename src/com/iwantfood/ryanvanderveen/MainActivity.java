@@ -29,7 +29,7 @@ public class MainActivity extends Activity{
     
     //Method that encapsulates the logic to begin the PageViewAdapter Criterion Activity
     public void goToCriteria() {
-    	Intent CriteriaIntent = new Intent(MainActivity.this, CriteriaFragmentActivity.class);
+    	Intent CriteriaIntent = new Intent(MainActivity.this, CriteriaActivityFragment.class);
 		MainActivity.this.startActivity(CriteriaIntent);
     }
 }

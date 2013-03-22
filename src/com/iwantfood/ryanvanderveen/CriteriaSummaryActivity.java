@@ -66,7 +66,7 @@ public class CriteriaSummaryActivity extends Activity {
 	
 	//methods for event handling
 	private void goToCriteria() {
-    	Intent CriteriaIntent = new Intent(CriteriaSummaryActivity.this, CriteriaFragmentActivity.class);
+    	Intent CriteriaIntent = new Intent(CriteriaSummaryActivity.this, CriteriaActivityFragment.class);
 		CriteriaSummaryActivity.this.startActivity(CriteriaIntent);
     }
 	private void goToPlaces() {
